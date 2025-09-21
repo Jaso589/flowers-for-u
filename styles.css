@@ -1,0 +1,166 @@
+body {
+  background: #131b21;
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+svg#flower-frame {
+  height: 90vh;
+  width: 100%;
+}
+.titles {
+  position: fixed;
+  top: 30%;
+  width: 50%;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Animación de títulos */
+.titles h1,
+.titles h2 {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 1s forwards;
+}
+
+/* Delays para que aparezcan en orden */
+.titles h1:nth-of-type(1) { animation-delay: 0.5s; }
+.titles h2 { animation-delay: 1.5s; }
+.titles h1:nth-of-type(2) { animation-delay: 2.5s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo del botón */
+.button-to-flower {
+  opacity: 0;
+  transform: translateY(20px);
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #f7a998;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  animation: fadeInUp 1s forwards;
+  animation-delay: 4s; /* Aparece después de los títulos */
+}
+
+/* Estilo del enlace dentro del botón */
+.button-to-flower a {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+.titles {
+  position: fixed;
+  top: 30%;
+  width: 50%;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 1rem;
+  width: 85%;
+  top: 37%;
+  line-height: .7rem;
+  font-size: .7rem;
+}
+
+/* Animación de títulos */
+.titles h1,
+.titles h2 {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 1s forwards;
+}
+
+/* Delays para que aparezcan en orden */
+.titles h1:nth-of-type(1) { animation-delay: 0.5s; }
+.titles h2 { animation-delay: 1.5s; }
+.titles h1:nth-of-type(2) { animation-delay: 2.5s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo del botón */
+.button-to-flower {
+  opacity: 0;
+  transform: translateY(20px);
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #f7a998;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  animation: fadeInUp 1s forwards;
+  animation-delay: 4s; /* Aparece después de los títulos */
+}
+
+/* Estilo del enlace dentro del botón */
+.button-to-flower a {
+  text-decoration: none;
+  color: white;
+}
+
+
+}
+
+/* Ocultamos rellenos blancos (los dots o shapes de relleno) */
+.st0 {
+  display: none;
+}
+
+/* Animación de trazos */
+path {
+  fill: none;                  /* solo borde */
+            /* color del trazo (ajústalo a gusto) */
+  stroke-width: 2;              /* grosor */
+  stroke-dasharray: 1000;       /* número grande (idealmente igual al largo del path) */
+  stroke-dashoffset: 1000;      /* empieza oculto */
+  animation: draw 6s linear forwards;
+}
+
+/* Animación base */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* OPCIONAL: puedes escalonar la animación con delays */
+#Footer_group_1_ path {
+  animation-delay: 0s;
+}
+
+[id^="LeafGroup"] path {
+  animation-delay: 2s;
+}
+
+[id^="BudGroup"] path {
+  animation-delay: 4s;
+}
+
+/* ❌ Ya no uses visibility:hidden en los grupos que quieres animar */
